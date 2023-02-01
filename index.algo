@@ -1,0 +1,13 @@
+FUNCTION insert(arr : ARRAY_OF INTEGER[1..n];) : of INTEGER
+VAR
+ i:INTEGER:= 1;
+ j:INTEGER:= i;
+BEGIN
+    FOR i FROM 1 TO n STEP 1  DO
+        WHILE (j > 0 and arr[j - 1] > arr[j]) DO
+            [arr[j], arr[j - 1]] = [arr[j - 1], arr[j]];
+             j:=j-1;
+        END_WHILE
+    END_FOR
+    RETURN arr ;
+END
